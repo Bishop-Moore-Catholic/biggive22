@@ -5,15 +5,23 @@ body {
 
 .progress {
     height: 80px;
-    background-color: #AE916A;
     background-color: #6A7275;
 }
 
-.progress-bar {
+.progress-bar:first-of-type {
     height: 80px;
     font-family: futura-pt, sans-serif;
     font-weight: 700;
     font-size: 40px;
     text-shadow: 1px 1px #000;
     background-color: #AE916A;
+}
+
+.progress-bar:nth-of-type(2) {
+    height: 80px;
+    font-family: futura-pt, sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    text-shadow: 1px 1px #000;
+    background-color: #6A7275;
 }

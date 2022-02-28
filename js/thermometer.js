@@ -19,9 +19,17 @@ var tag = function () {
     return a;
 }();
 
-var percentage = Math.floor((tag.current / tag.goal) * 100);
-console.log(percentage);
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
-$('.progress-bar').css('width', `${percentage}%`);
-$('.progress-bar').text(`${percentage}%`);
+var percentage = Math.floor((tag.current / tag.goal) * 100);
+var percentageLeft = 100 - percentage;
+var remaining = numberWithCommas(tag.goal - tag.current);
+
+$('.progress-bar:first-of-type').css('width', `${percentage}%`);
+$('.progress-bar:first-of-type').text(`$${numberWithCommas(tag.current)} (${percentage}%)`);
+
+$('.progress-bar:nth-of-type(2)').css('width', `${percentageLeft}%`);
+$('.progress-bar:nth-of-type(2)').text(`$${remaining} (${percentageLeft}%)`);
 
